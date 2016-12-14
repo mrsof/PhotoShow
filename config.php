@@ -40,4 +40,3 @@ $config->ps_generated   = "content/generated";
 // Local timezone. Default one is "Europe/Paris".
 $config->timezone = "Europe/Paris";
 
-?>

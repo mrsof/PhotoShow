@@ -102,4 +102,3 @@ class BoardItem implements HTMLObject
 	}
 }
 
-?>

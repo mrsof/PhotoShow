@@ -83,4 +83,3 @@ if(isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] == 'text/xml'){
 }else{
 	new Index();
 }
-?>

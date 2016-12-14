@@ -562,4 +562,3 @@ class Settings extends Page
 		echo "</div>";
 	}
 }
-?>

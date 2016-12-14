@@ -147,4 +147,3 @@ class ImagePanel implements HTMLObject
 	}
 	
 }
-?>

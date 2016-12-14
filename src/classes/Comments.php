@@ -246,4 +246,3 @@ class Comments implements HTMLObject
 	}
 }
 
-?>

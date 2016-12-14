@@ -175,4 +175,3 @@ class MainPage extends Page
 	}
 }
 
-?>

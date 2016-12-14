@@ -122,4 +122,3 @@ class Image implements HTMLObject
 	}
 }
 
-?>

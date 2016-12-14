@@ -80,7 +80,7 @@ class File
 	 * Return the root directory
 	 *
 	 * @return void
-	 * @author Cédric Levasseur
+	 * @author Cï¿½dric Levasseur
 	 */
 	public static function Root(){
 		return realpath(dirname(__FILE__)."/../../");
@@ -264,4 +264,3 @@ class File
 	 }
 
 }
-?>

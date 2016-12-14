@@ -93,4 +93,3 @@ class MenuBar implements HTMLObject{
 		echo "</div>\n";
 	}
 }
-?>

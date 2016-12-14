@@ -49,4 +49,3 @@ extends Exception
 	public $file;
 }
 
-?>

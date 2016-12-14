@@ -97,4 +97,3 @@ class Comment implements HTMLObject
 		echo "</div>\n";
 	}
 }
-?>

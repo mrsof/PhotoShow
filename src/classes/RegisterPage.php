@@ -127,4 +127,3 @@ class RegisterPage extends Page
         }
     }
 }
-?>

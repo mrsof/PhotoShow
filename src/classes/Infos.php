@@ -177,4 +177,3 @@ class Infos implements HTMLObject
 
 }
 
-?>

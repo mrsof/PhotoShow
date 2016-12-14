@@ -43,4 +43,3 @@ $config->ps_generated   = realpath(dirname(__FILE__))."/tmp/generated/";
 // Local timezone. Default one is "Europe/Paris".
 #$config->timezone = "Europe/Paris";
 
-?>

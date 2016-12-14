@@ -190,4 +190,3 @@ class Exif implements HTMLObject
 		return $v;
 	}
 }
-?>

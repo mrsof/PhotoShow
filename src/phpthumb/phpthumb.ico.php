@@ -117,4 +117,3 @@ class phpthumb_ico {
 
 }
 
-?>

@@ -135,4 +135,3 @@ class JS extends Page
 }
 
 
-?>

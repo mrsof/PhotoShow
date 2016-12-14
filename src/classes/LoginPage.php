@@ -95,4 +95,3 @@ class LoginPage extends Page
         }
     }
 }
-?>

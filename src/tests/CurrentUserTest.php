@@ -70,4 +70,3 @@ class CurrentUserTest extends TestUnit
 
 
 }
-?>

@@ -319,4 +319,3 @@ class Video implements HTMLObject
 
 }
 
-?>
