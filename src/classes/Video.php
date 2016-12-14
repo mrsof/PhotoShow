@@ -50,7 +50,7 @@ class Video implements HTMLObject
 	 * Create Video
 	 *
 	 * @param string $file 
-	 * @author Cédric Levasseur
+	 * @author Cï¿½dric Levasseur
 	 */
 	public function __construct($file=NULL,$forcebig = false){
 	
@@ -77,7 +77,7 @@ class Video implements HTMLObject
 	 *
 	 * @param string $file 
      * @return pid of the executed command (only linux)
-	 * @author Cédric Levasseur/Franck Royer
+	 * @author Cï¿½dric Levasseur/Franck Royer
 	 */	
 	public function ExecInBackground($cmd) {	
 		error_log('DEBUG/Video: Background Execution : '.$cmd,0);
@@ -164,11 +164,11 @@ class Video implements HTMLObject
 	
 	
 	/**
-	 * Asynchronous Convert all Video format to video/mp4
+	 * Asynchronous Convert all Video format to video/webm
 	 *   
 	 * Use ffmpeg for conversion
 	 * @return void
-	 * @author Cédric Levasseur
+	 * @author Cï¿½dric Levasseur
 	 */
     public static function FastEncodeVideo($file) {
 
@@ -179,13 +179,13 @@ class Video implements HTMLObject
 
         $file_file	       = new File($file);
         $thumb_path_no_ext = Settings::$thumbs_dir.dirname(File::a2r($file))."/".$file_file->name;
-        $thumb_path_mp4   = $thumb_path_no_ext.'.mp4';
+        $thumb_path_webm   = $thumb_path_no_ext.'.webm';	
         $thumb_path_jpg    = $thumb_path_no_ext.'.jpg';	
 
 
         // Check if thumb folder exist
-        if(!file_exists(dirname($thumb_path_mp4))){
-            @mkdir(dirname($thumb_path_mp4),0755,true);
+        if(!file_exists(dirname($thumb_path_webm))){
+            @mkdir(dirname($thumb_path_webm),0755,true);
         }
 
 
@@ -202,17 +202,17 @@ class Video implements HTMLObject
 
         if (self::NoJob($file))// We check that first to allow the clean of old job files
         {
-            if (!file_exists($thumb_path_mp4) || filectime($file) > filectime($thumb_path_mp4)){
-                if ($file_file->extension !="mp4") {
-                    ///Convert video to mp4 format in Thumbs folder
+            if (!file_exists($thumb_path_webm) || filectime($file) > filectime($thumb_path_webm)){
+                if ($file_file->extension !="webm") {
+                    ///Convert video to webm format in Thumbs folder
                     //TODO: Max job limit
-                    $u = Settings::$ffmpeg_path.' -i "'.$file.'" '.Settings::$ffmpeg_option.' -y "'.$thumb_path_mp4.'"';
+                    $u = Settings::$ffmpeg_path.' -i "'.$file.'" '.Settings::$ffmpeg_option.' -y "'.$thumb_path_webm.'"';		
                     $pid = self::ExecInBackground($u);
                     self::CreateJob($file, $pid);
                 }
                 else {
-                    ///Copy original mp4 video to Thumbs folder
-                    copy($file,$thumb_path_mp4);
+                    ///Copy original webm video to Thumbs folder
+                    copy($file,$thumb_path_webm);
                 }
             }
         }
@@ -300,7 +300,7 @@ class Video implements HTMLObject
         if ($control) {
             $c = ' controls="controls"';
         }
-        echo '<video'.$wh.$c.'><source src="?t=Vid&f='.$this->fileweb.'" type="video/mp4"/>';
+        echo '<video'.$wh.$c.'><source src="?t=Vid&f='.$this->fileweb.'" type="video/webm" />';
         echo 'Your browser does not support the video tag.<br />';
         echo 'Please upgrade your brower or Download the codec <a href="http://tools.google.com/dlpage/webmmf">Download</a>';
         echo '</video>';
@@ -311,10 +311,10 @@ class Video implements HTMLObject
 	 * Display the video on the website
 	 *
 	 * @return void
-	 * @author Cédric Levasseur
+	 * @author Cï¿½dric Levasseur
 	 */
 	public function toHTML(){	
-        self::VideoDiv(320,'',true);
+        self::VideoDiv(400,400,true);
 	}
 
 }
