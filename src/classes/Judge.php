@@ -125,7 +125,7 @@ class Judge
 		$basepath	=	File::a2r($f);
 
 		$this->filename = $basefile->name;
-		$this->webpath 	= "&f=".urlencode($basepath);
+		$this->webpath 	= "&amp;f=".urlencode($basepath);
 
 		if(is_file($f)){
 			$rightsfile	=	dirname($basepath)."/.".mb_basename($f)."_rights.xml";
