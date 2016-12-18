@@ -47,7 +47,6 @@ abstract class Page implements HTMLObject
 {
 		/**
 		 * Generate an insanely beautiful header.
-		 * TODO: Title
 		 *
 		 * @return void
 		 * @author Thibaud Rohmer
@@ -108,6 +107,7 @@ abstract class Page implements HTMLObject
 			}
 
 			echo "</head>";
+			echo "<body>";
 
 		}
 }
