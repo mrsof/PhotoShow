@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<accounts>
+    <account>
+        <login>Marion</login>
+        <password>e392eb1e3baf932022ef664489e8e1d422ad9841</password>
+        <name/>
+        <email/>
+        <language/>
+        <key/>
+        <groups>
+            <group>user</group>
+            <group>root</group>
+        </groups>
+    </account>
+</accounts>
