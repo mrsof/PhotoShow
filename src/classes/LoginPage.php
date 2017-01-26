@@ -1,11 +1,11 @@
 <?php
 /**
  * This file implements the class LoginPage.
- *
+ * 
  * PHP versions 4 and 5
  *
  * LICENSE:
- *
+ * 
  * This file is part of PhotoShow.
  *
  * PhotoShow is free software: you can redistribute it and/or modify
@@ -41,60 +41,55 @@
  * @license   http://www.gnu.org/licenses/
  * @link      http://github.com/thibaud-rohmer/PhotoShow
  */
+
 class LoginPage extends Page
 {
+	
+	/**
+	 * Create Login Page
+	 *
+	 * @author Thibaud Rohmer
+	 */
+	public function __construct(){
+			
+	}
+	
+	/**
+	 * Display Login Page on website
+	 *
+	 * @return void
+	 * @author Thibaud Rohmer
+	 */
+	public function toHTML(){
 
-    /**
-     * Create Login Page
-     *
-     * @author Thibaud Rohmer
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
-     * Display Login Page on website
-     *
-     * @return void
-     * @author Thibaud Rohmer
-     */
-    public function toHTML()
-    {
-
-        if (Settings::$forcehttps && !$_SERVER["HTTPS"])
-        {
+        if (Settings::$forcehttps && !$_SERVER["HTTPS"]){
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: https://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]);
+            header("Location: https://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);
             exit();
-        }
-        else
-        {
+        }else{
             $this->header();
             echo "<div class='header'>";
-            echo "<h1>" . Settings::_("login", "logintitle") . "</h1>";
-            echo "</div>";
+            echo "<h1>".Settings::_("login","logintitle")."</h1>";
+                        echo "</div>";
 
             echo "<div class='center'>\n";
             echo "<form method='post' action='?t=Login' class='pure-form pure-form-aligned niceform'>\n";
             echo "<fieldset>
                  <div class='pure-control-group'>
-                 <label>" . Settings::_("login", "login") . "</label>
-                    <input type='text' name='login' value='' placeholder='" . Settings::_("login", "login") . "'>
+                 <label>".Settings::_("login","login")."</label>
+                    <input type='text' name='login' value='' placeholder='".Settings::_("login","login")."'>
                 </div>
                  <div class='pure-control-group'>
-                 <label>" . Settings::_("login", "pass") . "</label>
-                    <input type='password' name='password' value='' placeholder='" . Settings::_("login", "pass") . "'>
+                 <label>".Settings::_("login","pass")."</label>
+                    <input type='password' name='password' value='' placeholder='".Settings::_("login","pass")."'>
                     </div>
                  <div class='pure-control-group'>
 					<label></label>
-                    <input type='submit' class='pure-button pure-button-primary' value='" . Settings::_("login", "submit") . "'>";
+                    <input type='submit' class='pure-button pure-button-primary' value='".Settings::_("login","submit")."'>";
 
-            if (!Settings::$noregister)
-            {
-                echo " " . Settings::_("login", "or") . " <a class='pure-button button-success' href='?t=Reg'>" . Settings::_("login", "register") . "</a> ";
-            }
+		 			if (!Settings::$noregister){
+				       echo " ".Settings::_("login","or")." <a class='pure-button button-success' href='?t=Reg'>".Settings::_("login","register")."</a> ";
+				    }
 
             echo "</div>\n</fieldset>\n</form>\n</div>\n";
         }

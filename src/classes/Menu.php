@@ -138,7 +138,7 @@ class Menu implements HTMLObject
 
 			echo 	"<span class='name hidden'>".htmlentities($this->title, ENT_QUOTES ,'UTF-8')."</span>";
 			echo 	"<span class='path hidden'>".htmlentities($this->path, ENT_QUOTES ,'UTF-8')."</span>";
-			echo 	"<a href='?f=$this->webdir'>".htmlentities($this->title, ENT_QUOTES ,'UTF-8')."</a>";
+			echo 	"<a href='?f=" . $this->webdir . "'>".htmlentities($this->title, ENT_QUOTES ,'UTF-8')."</a>";
 
 			foreach($this->items as $item)
 				$item->toHTML();
@@ -166,7 +166,7 @@ class Menu implements HTMLObject
 
 		/// Check that $dir is a directory, or throw exception
 		if(!is_dir($dir)) 
-			throw new Exception("'".$dir."' is not a directory (list_dirs)");
+			throw new Exception("'".$dir."' is not a directory");
 			
 		/// Directory content
 		$dir_content = scandir($dir);
@@ -214,7 +214,7 @@ class Menu implements HTMLObject
 		
 		/// Check that $dir is a directory, or throw exception
 		if(!is_dir($dir)) 
-			throw new Exception("'".$dir."' is not a directory (list_files)");
+			throw new Exception("'".$dir."' is not a directory");
 
 		/// Directory content
 		$dir_content = scandir($dir);

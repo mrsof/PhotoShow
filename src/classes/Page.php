@@ -47,12 +47,13 @@ abstract class Page implements HTMLObject
 {
 		/**
 		 * Generate an insanely beautiful header.
+		 * TODO: Title
 		 *
 		 * @return void
 		 * @author Thibaud Rohmer
 		 */
 		public function header($head_content=NULL){
-			echo "<!DOCTYPE html>\n";
+			echo "<!DOCTYPE html>";
 			echo "<html>";
 			echo "<head>\n";
 			echo "<meta charset='utf-8'>\n";
@@ -66,12 +67,12 @@ abstract class Page implements HTMLObject
 			echo "<link rel='stylesheet' href='inc/stylesheets/pure-grid.css'>\n";
 			echo "<link rel='stylesheet' href='inc/stylesheets/font-awesome.min.css'>\n";
 			
-			echo "<link rel='stylesheet' href='src/stylesheets/structure.css' type='text/css' media='screen' />\n";
-			echo "<link rel='stylesheet' href='src/stylesheets/buttons.css' type='text/css' media='screen' />\n";
-			echo "<link rel='stylesheet' href='src/stylesheets/theme.css' type='text/css' media='screen' />\n";
-			echo "<link rel='stylesheet' href='src/stylesheets/side-menu.css' type='text/css' media='screen' />\n";
+			echo "<link rel='stylesheet' href='src/stylesheets/structure.css' type='text/css' media='screen'>\n";
+			echo "<link rel='stylesheet' href='src/stylesheets/buttons.css' type='text/css' media='screen'>\n";
+			echo "<link rel='stylesheet' href='src/stylesheets/theme.css' type='text/css' media='screen'>\n";
+			echo "<link rel='stylesheet' href='src/stylesheets/side-menu.css' type='text/css' media='screen'>\n";
 
-			echo "<link rel='stylesheet' href='user/themes/".Settings::$user_theme."/style.css' type='text/css' media='screen' />\n";
+			echo "<link rel='stylesheet' href='user/themes/".Settings::$user_theme."/style.css' type='text/css' media='screen'>\n";
 
 			/// Trick to hide "only-script" parts
 	 		echo "<noscript><style>.noscript_hidden { display: none; }</style></noscript>";
@@ -91,6 +92,7 @@ abstract class Page implements HTMLObject
 			echo "<script src='src/js/slideshow.js'></script>\n";
 			echo "<script src='src/js/image_panel.js'></script>\n";
 			echo "<script src='src/js/keyboard.js'></script>\n";
+			echo "<script src='src/js/confirmation.js'></script>\n";
 
 
 

@@ -57,7 +57,7 @@ h3{
 span#rss{
 	position: absolute;
 	top: 15px;
-	right : -4px;
+	right : 4px;
 	z-index:200;
 	background: orange;
 	padding: 8px;
@@ -80,6 +80,10 @@ span#logo{
 	height: 60px;
 	overflow: hidden;
 }
+span#logo a{
+	text-decoration: none;
+	color: inherit;
+}
 
 div#menuright-header{
 	border-bottom: 1px solid #e0e0e0;
@@ -98,7 +102,7 @@ div#menuright-header{
 	margin:auto;
 	overflow:hidden;
     font-family: "Roboto-Regular", sans-serif;
-    margin: 0 auto;
+    margin: 0 15px 0 0;
     background-color: #00bcd4;
     height: 60px;
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
@@ -173,7 +177,6 @@ div.directory .dirname
 
 div.directory img{
 	width:100%;
-	max-height: 150px;
 }
 
 /* Linear Panel */
@@ -275,7 +278,7 @@ div#image_panel_table {
 	margin-top: -5px;
 }
 
-	
+
 div#bigimage,
 div#bigvideo{
 	display: table-row;
@@ -335,8 +338,11 @@ div.commentdelete {
 
 
 /* Menu */
-ul.selected > li > ul {
-/*ul.selected > ul{*/
+.pure-menu {
+	padding-bottom: 20px;
+}
+
+ul.selected > li > ul{
 	position: relative;
 	visibility: visible;
 	left: auto;
@@ -354,14 +360,18 @@ li {
 	padding: 0;
 }
 
-.pure-menu a {
+.pure-menu a{
 	font-family: 'Roboto-Bold',sans-serif;
 	font-size: 13px;
 	color: black;
 }
 
-.currentSelected > a{
-	color: #0085be;
+li.currentSelected{
+
+}
+
+li.currentSelected > a{
+	color: #0085be !important;
 }
 
 
@@ -419,6 +429,9 @@ div#deleteform{
 	top: 20px;
 }
 
+.infos .pure-g > .pure-u-1-2 > input[type=text] {
+	width: 100%;
+}
 
 /* Description */
 
